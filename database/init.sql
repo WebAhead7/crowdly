@@ -8,21 +8,22 @@ CREATE TABLE users (
   first_name TEXT,
   last_name TEXT,
   email_address VARCHAR(255) NOT NULL,
-  user_password VARCHAR(255) NOT NULL,
+  user_password VARCHAR(255) NOT NULL
 );
 
 CREATE TABLE blog_posts (
   id SERIAL PRIMARY KEY,
   user_id INTEGER REFERENCES users(id),
-  text_content TEXT
+  text_content TEXT,
+  post_date TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
 
 CREATE TABLE comments (
   id SERIAL PRIMARY KEY,
   user_id INTEGER REFERENCES users(id),
   post_id INTEGER REFERENCES blog_posts(id),
-  text_content TEXT
-)
+  comment_content TEXT
+);
 
 
 COMMIT;

@@ -5,6 +5,7 @@ const missing = require("./missing");
 function resources(request, response) {
   const url = request.url;
   const types = {
+    html: "text/html",
     css: "text/css",
     js: "application/json",
     jpg: "image/jpg",

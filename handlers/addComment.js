@@ -1,16 +1,15 @@
-const { postPost } = require("../database/model");
+const { addNewComment } = require("../database/model");
 
-function newPost(request, response) {
+function addComment(request, response) {
   let body = "";
   request.on("data", (chunk) => (body += chunk));
   request.on("end", () => {
-    const { user_id, text_content } = JSON.parse(body);
-    console.log(user_id, text_content);
-
-    postPost(user_id, text_content)
+    const { user_id, post_id, comment_content } = JSON.parse(body);
+    console.log(user_id, post_id, comment_content);
+    addNewComment(user_id, post_id, comment_content)
       .then(() => {
         response.writeHead(201, { "content-type": "text/html" });
-        response.end(JSON.stringify(`Success, Your post where added !`));
+        response.end(JSON.stringify(`Success, Your comment where added !`));
       })
       .catch((error) => {
         console.log(error);
@@ -20,4 +19,4 @@ function newPost(request, response) {
   });
 }
 
-module.exports = newPost;
+module.exports = addComment;
