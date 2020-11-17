@@ -1,5 +1,3 @@
-const db = require("../database/connection");
-
 function newPost(request, response) {
   response.writeHead(200, { "content-type": "text/html" });
 
