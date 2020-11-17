@@ -1,6 +1,7 @@
 const fs = require("fs");
 const path = require("path");
 const missing = require("./missing");
+const db = require("../database/connection");
 
 function home(request, response) {
   const filePath = path.join(__dirname, "..", "public", "index.html");
