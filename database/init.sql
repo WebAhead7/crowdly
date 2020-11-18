@@ -23,10 +23,15 @@ CREATE TABLE blog_posts (
 
 CREATE TABLE comments (
   id SERIAL PRIMARY KEY,
-  user_id INTEGER REFERENCES users(id),
+  comment_owner VARCHAR(255) NOT NULL,
   post_id INTEGER REFERENCES blog_posts(id),
   comment_content TEXT
 );
+
+INSERT INTO users (username,user_password,first_name,last_name, email_address ) VALUES
+  ('Sery1976',123,'lui' ,'lo','Sery@hotmail.com');
+ 
+
 
 
 COMMIT;

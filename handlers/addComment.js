@@ -4,9 +4,9 @@ function addComment(request, response) {
   let body = "";
   request.on("data", (chunk) => (body += chunk));
   request.on("end", () => {
-    const { user_id, post_id, comment_content } = JSON.parse(body);
-    console.log(user_id, post_id, comment_content);
-    addNewComment(user_id, post_id, comment_content)
+    const { comment_owner, post_id, comment_content } = JSON.parse(body);
+    console.log(comment_owner, post_id, comment_content);
+    addNewComment(comment_owner, post_id, comment_content)
       .then(() => {
         response.writeHead(201, { "content-type": "text/html" });
         response.end(JSON.stringify(`Success, Your comment where added !`));

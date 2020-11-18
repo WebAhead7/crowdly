@@ -1,0 +1,41 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background: url("https://www.travolution.com/images/cms/original/9/8/b/0/3/easid-115328-media-id-7450.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.login-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  margin: auto;
+  margin-top: 60px;
+  padding-top: 60px;
+}
+
+header {
+  margin-bottom: 16px;
+  color: black;
+  text-align: left;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+.username {
+  margin-top: 16px;
+}
+.password {
+  margin-top: 16px;
+}
+.submit-field {
+  margin-top: 16px;
+}
+form input[type="submit"] {
+  cursor: pointer;
+  outline: none;
+  margin: auto;
+}
