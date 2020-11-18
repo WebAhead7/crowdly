@@ -7,4 +7,7 @@ const connectionString = process.env.DATABASE_URL;
 
 const db = new pg.Pool({ connectionString });
 
+// db.query("SELECT * FROM blog_posts").then((results) =>
+//   console.log(results.rows)
+// );
 module.exports = db;

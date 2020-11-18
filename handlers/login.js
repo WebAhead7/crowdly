@@ -4,8 +4,8 @@ function login(request, response) {
   let body = "";
   request.on("data", (chunk) => (body += chunk));
   request.on("end", () => {
-    var data = JSON.parse(body);
-
+    const data = JSON.parse(body);
+    console.log(data);
     model
       .getUser(data.username, data.password)
       .then((result) => {

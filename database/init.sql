@@ -14,15 +14,21 @@ CREATE TABLE users (
 CREATE TABLE blog_posts (
   id SERIAL PRIMARY KEY,
   user_id INTEGER REFERENCES users(id),
-  text_content TEXT
+  text_content TEXT,
+  post_date TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
 
 CREATE TABLE comments (
   id SERIAL PRIMARY KEY,
   user_id INTEGER REFERENCES users(id),
   post_id INTEGER REFERENCES blog_posts(id),
-  text_content TEXT
+  comment_content TEXT
 );
+
+INSERT INTO users (username,user_password,first_name,last_name, email_address ) VALUES
+  ('Sery1976',123,'lui' ,'lo','Sery@hotmail.com');
+ 
+
 
 
 COMMIT;
