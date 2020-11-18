@@ -17,23 +17,26 @@ function newsFeed(request, response) {
 
 module.exports = newsFeed;
 
-function filterData(data){
-  const postIds = Array.from(new Set(data.map(comment => comment.post_id)));
-  const posts = postIds.map(postId => {
-     return data.filter(comment=> comment.post_id === postId);
-  })
-  return posts.map(post=> groupPosts(post));
+function filterData(data) {
+  const postIds = Array.from(new Set(data.map((comment) => comment.post_id)));
+  const posts = postIds.map((postId) => {
+    return data.filter((comment) => comment.post_id === postId);
+  });
+  return posts.map((post) => groupPosts(post));
 }
 
+function groupPosts(arr) {
+  const { username, text_content, post_id, post_date } = arr[0];
+  const comments = arr.map((comment) => {
+    const { comment_content, comment_owner } = comment;
+    return { comment_content, comment_owner };
+  });
 
-function groupPosts(arr){
-  const{username,text_content,post_id} = arr[0];
-  const comments = arr.map(comment => {
-      const {comment_content,comment_owner} = comment;
-      return {comment_content,comment_owner};
-  })
-
-  return{
-      username,text_content,post_id,comments
-  }
+  return {
+    username,
+    text_content,
+    post_id,
+    post_date,
+    comments,
+  };
 }

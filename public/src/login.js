@@ -22,16 +22,23 @@ function login() {
       password: password.value,
     }),
   })
-    .then((res) => res.json())
     .then((res) => {
-      console.log(res);
-      if (res.statusCode !== 200) {
-        throw new Error("faild");
+      return res.json();
+    })
+    .then((res) => {
+      if (res !== false) {
+        saveLogin(res[0]);
+        window.location.pathname = "/";
+      } else {
+        throw new Error();
       }
-      window.location.pathname = "/newsfeed.html";
     })
     .catch((err) => {
-      alert("please try again");
+      alert("Please check username or password");
       console.log(err);
     });
+}
+
+function saveLogin(user) {
+  localStorage.setItem("current_user", JSON.stringify(user));
 }

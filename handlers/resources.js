@@ -17,6 +17,7 @@ function resources(request, response) {
   let newPath = `${urlArray[0]}.${urlArray[1]}`;
 
   const filePath = path.join(__dirname, "..", newPath);
+
   fs.readFile(filePath, (error, file) => {
     if (error) {
       missing(request, response);

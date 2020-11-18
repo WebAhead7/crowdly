@@ -11,8 +11,7 @@ CREATE TABLE users (
   user_password VARCHAR(255) NOT NULL
 );
 
-INSERT INTO users (username, first_name, last_name, email_address, user_password) VALUES
-  ('ahmad', 'ahmad', 'af', 'ahmad@gmail.com', '1234');
+
 
 CREATE TABLE blog_posts (
   id SERIAL PRIMARY KEY,
@@ -30,7 +29,12 @@ CREATE TABLE comments (
 
 INSERT INTO users (username,user_password,first_name,last_name, email_address ) VALUES
   ('Sery1976',123,'lui' ,'lo','Sery@hotmail.com');
+
+INSERT INTO users (username, first_name, last_name, email_address, user_password) VALUES
+  ('ahmad', 'ahmad', 'af', 'ahmad@gmail.com', '1234');
  
+ INSERT INTO users (username, first_name, last_name, email_address, user_password) VALUES
+  ('headhunter', 'alaa', 'bashiyi', 'alaa@gmail.com', '321321');
 
 
 

@@ -67,4 +67,5 @@ module.exports = {
   addNewComment,
   getUsernameEmail,
   addUser,
+  getUser,
 };
