@@ -2,13 +2,55 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Feed</title>
+  <link rel="stylesheet" href="/public/src/styles/newsfeed.css" />
 </head>
 
 <body>
-    <h1>Wecome to newsfeed</h1>
+  <header class="top">
+    <nav class="navbar">
+      <ul id="menu">
+        <li><a href="#container">Home</a></li>
+      </ul>
+    </nav>
+    <div class="img-header"></div>
+  </header>
+  <div class="container">
+    <section class="first_section">
+      <h2>Create post</h2>
+      <textarea cols="40" rows="5" id="post_content"> </textarea>
+      <button id="post_btn">Post</button>
+    </section>
+    <section class="news_feed" id="news_feed">
+      <div class="post">
+        <div class="post_header">
+          <span>${post.username}</span><span>${post.post_date}</span>
+        </div>
+        <div class="content">
+          <p>${post.text_content}</p>
+        </div>
+        <div class="btns">
+          <button>Like</button>
+          <button id="comment_btn">Comment</button>
+          <button>Share</button>
+        </div>
+        <div class="comment">
+          <div class="comments">
+            <span class="user_comment">username</span><span>this is a comment again here i like this post blah balh balh
+              asdas dad asdaasdgfsa adf adf s asdadsf sfd sf asda dadads asd
+              asd asda sdas dad asdaadsadasdasd</span>
+          </div>
+          <div class="add_comment">
+            <textarea rows="2" id="post_content"> </textarea>
+            <button id="add_comment_btn">Add comment</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script src="/public/src/newsfeed.js"></script>
 </body>
 
 </html>

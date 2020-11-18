@@ -5,6 +5,7 @@ const newPost = require("./handlers/newPost");
 const newsFeed = require("./handlers/newsFeed");
 const resources = require("./handlers/resources");
 const missing = require("./handlers/missing");
+const addComment = require("./handlers/addComment");
 
 function router(request, response) {
   const url = request.url;
@@ -18,6 +19,8 @@ function router(request, response) {
     register(request, response);
   } else if (url === "/newpost") {
     newPost(request, response);
+  } else if (url === "/addcomment") {
+    addComment(request, response);
   } else if (url === "/newsfeed") {
     newsFeed(request, response);
   } else {
