@@ -11,6 +11,9 @@ CREATE TABLE users (
   user_password VARCHAR(255) NOT NULL
 );
 
+INSERT INTO users (username, first_name, last_name, email_address, user_password) VALUES
+  ('ahmad', 'ahmad', 'af', 'ahmad@gmail.com', '1234');
+
 CREATE TABLE blog_posts (
   id SERIAL PRIMARY KEY,
   user_id INTEGER REFERENCES users(id),
