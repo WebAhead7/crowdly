@@ -1,15 +1,5 @@
 const db = require("./connection");
 
-// function getAllPosts() {
-//   return db
-//     .query(
-//       `
-
-//       select users.username, users.id, blog_posts.text_content, blog_posts.id, blog_posts.post_date from blog_posts left join users on users.id = blog_posts.user_id order by blog_posts.post_date;
-//     `
-//     )
-//     .then((result) => result.rows);
-// }
 
 function getAllPosts() {
   return db
@@ -32,6 +22,18 @@ function postPost(user_id, postContent) {
   );
 }
 
+function getUser(username, password) {
+  console.log(username, password);
+  return db
+    .query(`SELECT * from users where username = $1 and user_password = $2`, [
+      username,
+      password,
+    ])
+    .then((results) => results.rows);
+}
+module.exports = { getAllPosts, postPost, getUser };
+function addNewComment(user_id, post_id, comment_content) {
+  const values = [parseInt(user_id), parseInt(post_id), comment_content];
 function addNewComment(comment_owner, post_id, comment_content) {
   const values = [comment_owner, parseInt(post_id), comment_content];
   return db.query(
@@ -40,8 +42,4 @@ function addNewComment(comment_owner, post_id, comment_content) {
   );
 }
 
-module.exports = { getAllPosts, postPost, addNewComment };
-
-
-// select users.username, blog_posts.text_content, blog_posts.id as post_id,blog_posts.post_date, comments.comment_content from users inner join blog_posts on blog_posts.user_id = users.id
-// left join comments on comments.post_id = blog_posts.id;
+module.exports = { getAllPosts, postPost, addNewComment, getUser };

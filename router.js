@@ -1,4 +1,5 @@
 const home = require("./handlers/home");
+const loginPage = require("./handlers/loginPage");
 const login = require("./handlers/login");
 const register = require("./handlers/register");
 const newPost = require("./handlers/newPost");
@@ -13,8 +14,10 @@ function router(request, response) {
     home(request, response);
   } else if (url.includes("/public")) {
     resources(request, response);
-  } else if (url === "/login") {
+  } else if (url === "/login" && request.method === "POST") {
     login(request, response);
+  } else if (url === "/loginpage") {
+    loginPage(request, response);
   } else if (url === "/register") {
     register(request, response);
   } else if (url === "/newpost") {

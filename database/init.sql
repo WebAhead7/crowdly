@@ -25,5 +25,10 @@ CREATE TABLE comments (
   comment_content TEXT
 );
 
+INSERT INTO users (username,user_password,first_name,last_name, email_address ) VALUES
+  ('Sery1976',123,'lui' ,'lo','Sery@hotmail.com');
+ 
+
+
 
 COMMIT;
