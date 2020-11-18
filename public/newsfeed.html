@@ -1,36 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Feed</title>
+    <link rel="stylesheet" href="/public/src/styles/newsfeed.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Feed</title>
-  <link rel="stylesheet" href="/public/src/styles/newsfeed.css" />
-</head>
-
-<body>
-  <header class="top">
-    <nav class="navbar">
-      <ul id="menu">
-        <li><a href="#container">Home</a></li>
-      </ul>
-    </nav>
-    <div class="img-header"></div>
-  </header>
-  <div class="container">
-    <section class="first_section">
-      <h2>Create post</h2>
-      <textarea cols="40" rows="5" id="post_content"> </textarea>
-      <button id="post_btn">Post</button>
-    </section>
-    <section class="news_feed" id="news_feed">
-      <div class="post">
-
-        
-      </div>
-    </section>
-  </div>
-  <script src="/public/src/newsfeed.js"></script>
-</body>
-
+  <body>
+    <header class="top">
+      <nav class="navbar">
+        <ul id="menu">
+          <li><a href="#container">Home</a></li>
+        </ul>
+      </nav>
+      <div class="img-header"></div>
+    </header>
+    <div class="container">
+      <section class="first_section">
+        <h2>Create post</h2>
+        <textarea cols="40" rows="5" id="post_content"> </textarea>
+        <button id="post_btn">Post</button>
+      </section>
+      <section class="news_feed" id="news_feed">
+        <div class="post"></div>
+      </section>
+    </div>
+    <script src="/public/src/newsfeed.js"></script>
+  </body>
 </html>
