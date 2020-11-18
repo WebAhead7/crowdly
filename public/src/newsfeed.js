@@ -41,9 +41,10 @@ function updateDom(feed_array) {
     if (post.text_content) {
       const div = document.createElement("div");
       div.classList.add("post");
+      div.type = post.post_id;
       div.innerHTML = `
           <div class="post_header">
-            <span>${post.username}</span><span>${post.post_date}</span>
+            <span>${post.username}</span><span>${post.date}</span>
           </div>
           <div class="content">
             <p>
@@ -55,17 +56,38 @@ function updateDom(feed_array) {
             <button>Comment</button>
             <button>Share</button>
           </div>
+          <div class="comment">
+            <div class="all_comments">
+            ${generateComments(post.comments)}
+            </div>
+            <div class="add_comment">
+              <textarea rows="2" id="post_content"> </textarea>
+              <button id="add_comment_btn">Add comment</button>
+            </div>
+          </div>
               `;
-
+      
       newsFeed.appendChild(div);
     }
   });
+}
+
+function generateComments(arr){
+return arr.map(comment=> {
+  return`<div class="comments">
+  <span class="user_comment">${comment.comment_owner}</span
+  ><span
+    >${comment.comment_content}</span
+  >
+</div>`
+}).join('');
 }
 
 post_btn.addEventListener("click", (e) => {
   console.log(post_content.value);
   addNewPost("1", post_content.value);
 });
+
 
 comment_btn.addEventListener("click", (e) => {
   add_comment_section.classList.toggle("show_element");

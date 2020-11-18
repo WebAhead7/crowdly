@@ -20,7 +20,7 @@ CREATE TABLE blog_posts (
 
 CREATE TABLE comments (
   id SERIAL PRIMARY KEY,
-  user_id INTEGER REFERENCES users(id),
+  comment_owner VARCHAR(255) NOT NULL,
   post_id INTEGER REFERENCES blog_posts(id),
   comment_content TEXT
 );
