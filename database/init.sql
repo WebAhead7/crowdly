@@ -8,7 +8,7 @@ CREATE TABLE users (
   first_name TEXT,
   last_name TEXT,
   email_address VARCHAR(255) NOT NULL,
-  user_password VARCHAR(255) NOT NULL,
+  user_password VARCHAR(255) NOT NULL
 );
 
 CREATE TABLE blog_posts (
@@ -22,7 +22,7 @@ CREATE TABLE comments (
   user_id INTEGER REFERENCES users(id),
   post_id INTEGER REFERENCES blog_posts(id),
   text_content TEXT
-)
+);
 
 
 COMMIT;

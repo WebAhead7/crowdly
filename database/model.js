@@ -19,4 +19,13 @@ function postPost(user, postContent) {
     values
   );
 }
-module.exports = { getAllPosts, postPost };
+
+function getUser(username, password) {
+  return db
+    .query(`SELECT * from users where username = $1 and user_password = $2`, [
+      username,
+      password,
+    ])
+    .then((results) => results.rows);
+}
+module.exports = { getAllPosts, postPost, getUser };
