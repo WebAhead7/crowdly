@@ -16,11 +16,9 @@ function registerUser(data) {
         body: JSON.stringify(data)
     }).then(res => {
         if (!res.ok) throw new Error
-
-        else {
-            formDiv.style.display = 'none'
-            redirDiv.style.display = 'block'
-        }
+        console.log("RESPONSE IS --> ", res)
+        formDiv.style.display = 'none'
+        redirDiv.style.display = 'block'
     }).catch(err => console.error(err))
 
 }
@@ -32,6 +30,7 @@ form.addEventListener('submit', (e) => {
         // object containing all the data from the form
         const formData = new FormData(e.target);
         const data = Object.fromEntries(formData)
+        console.log(data)
         // Registering a user by sending an API POST REQUEST to the server
         // using a function
         registerUser(data);
