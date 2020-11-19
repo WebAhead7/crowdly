@@ -1,6 +1,6 @@
 const username = document.querySelector(".username");
 const password = document.querySelector(".password");
-const url = "http://localhost:3000";
+const url = "https://crowdly-blog.herokuapp.com";
 const login_btn = document.querySelector(".submit-field");
 const form = document.querySelector("form");
 

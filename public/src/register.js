@@ -6,7 +6,7 @@ const formDiv = document.querySelector("#formDiv");
 const redirDiv = document.querySelector("#redirDiv");
 
 // Server url to make a request
-const url = "http://localhost:3000";
+const url = "https://crowdly-blog.herokuapp.com";
 
 /***FUNCTION FOR REGISTERING USERS***/
 function registerUser(data) {

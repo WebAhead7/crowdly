@@ -2,9 +2,9 @@ const newsFeed = document.querySelector("#news_feed");
 const post_btn = document.querySelector("#post_btn");
 const post_content = document.querySelector("#post_content");
 const logout_btn = document.querySelector("#user_logout");
-const feed_Url = "http://localhost:3000/api/newsfeed";
-const post_Url = "http://localhost:3000/api/newpost";
-const comment_Url = "http://localhost:3000/api/addcomment";
+const feed_Url = "https://crowdly-blog.herokuapp.com/api/newsfeed";
+const post_Url = "https://crowdly-blog.herokuapp.com/api/newpost";
+const comment_Url = "https://crowdly-blog.herokuapp.com/api/addcomment";
 
 function isLoggedin() {
   const isUserLoggedIn = localStorage.getItem("current_user");
