@@ -1,4 +1,5 @@
 const { getAllPosts } = require("../database/model");
+const moment = require("moment");
 
 function newsFeed(request, response) {
   getAllPosts()
@@ -31,6 +32,7 @@ function groupPosts(arr) {
     const { comment_content, comment_owner } = comment;
     return { comment_content, comment_owner };
   });
+  post_date = moment(post_date).format("LLL");
 
   return {
     username,
