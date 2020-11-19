@@ -5,9 +5,8 @@ function newPost(request, response) {
   request.on("data", (chunk) => (body += chunk));
   request.on("end", () => {
     const { user_id, text_content } = JSON.parse(body);
-    console.log(user_id, text_content);
-
-    postPost(user_id, text_content)
+    const date = new Date().getTime();
+    postPost(user_id, text_content, date)
       .then(() => {
         response.writeHead(201, { "content-type": "text/html" });
         response.end(JSON.stringify(`Success, Your post where added !`));
