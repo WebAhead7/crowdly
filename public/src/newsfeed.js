@@ -148,6 +148,7 @@ function generateComments(arr) {
         return "";
       }
     })
+    .reverse()
     .join("");
 }
 isLoggedin();
@@ -165,7 +166,7 @@ function injectComment(comment) {
           >${comment_content}</span
         >`;
   div.innerHTML = content;
-  commentContainer.prepend(div);
+  commentContainer.appendChild(div);
   const post_content = document.querySelector(`#post_content-${post_id}`);
   const commentInput = document.querySelector(`#comment_input-${post_id}`);
   post_content.value = "";

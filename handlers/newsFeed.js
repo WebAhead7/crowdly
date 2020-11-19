@@ -6,7 +6,7 @@ function newsFeed(request, response) {
     .then((res) => {
       response.writeHead(200, { "content-type": "application/json" });
       const filteredData = filterData(res);
-      response.write(JSON.stringify(filteredData));
+      response.write(JSON.stringify(filteredData.reverse()));
       response.end();
     })
     .catch((e) => {
