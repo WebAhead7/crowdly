@@ -5,13 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Feed</title>
     <link rel="stylesheet" href="/public/src/styles/newsfeed.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+      integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
+      crossorigin="anonymous"
+    />
   </head>
 
   <body>
     <header class="top">
       <nav class="navbar">
-        <ul id="menu">
-          <li><a href="/">Home</a></li>
+        <ul id="menu" class="menu">
+          <li id="welcome_user">Home</li>
+          <!-- <li>Welcome, Username</li> -->
           <li><button id="user_logout">Logout</button></li>
         </ul>
       </nav>

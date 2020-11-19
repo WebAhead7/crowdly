@@ -12,7 +12,7 @@ form.addEventListener("submit", (event) => {
 });
 
 function login() {
-  fetch(`/login`, {
+  fetch(`/api/login`, {
     method: "POST",
     headers: {
       "content-type": "application/json",

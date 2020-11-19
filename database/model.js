@@ -22,7 +22,6 @@ function postPost(user_id, postContent) {
 }
 
 function getUser(username, password) {
-  console.log(username, password);
   return db
     .query(`SELECT * from users where username = $1 and user_password = $2`, [
       username,
@@ -32,8 +31,6 @@ function getUser(username, password) {
 }
 
 function getUsernameEmail(username, email) {
-  console.log("USERNAME AND EMAIL INSIDE getUsernameEmail");
-  console.log(username, email);
   return db.query(
     `SELECT username, email_address
     FROM users

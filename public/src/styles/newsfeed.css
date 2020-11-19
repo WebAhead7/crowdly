@@ -10,12 +10,46 @@ body {
   align-items: center;
 }
 
+header {
+  width: 100%;
+}
+
+.navbar {
+  width: 100%;
+}
+
+.navbar ul.menu {
+  list-style: none;
+  position: relative;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  flex-direction: row !important;
+}
+
+.navbar ul.menu li {
+  font-weight: bold;
+  font-size: 16px;
+  letter-spacing: 2px;
+  text-decoration: none;
+  padding: 20px 5px;
+  /* display: inline-block; */
+  width: 100%;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 60%;
+  background-color: rgba(150, 150, 150, 0.7);
+  -webkit-box-shadow: 5px 5px 14px 5px rgba(0, 0, 0, 0.56);
+  box-shadow: 5px 5px 14px 5px rgba(0, 0, 0, 0.56);
 }
 
 .first_section {
@@ -47,7 +81,7 @@ body {
   justify-content: center;
   align-items: center;
   padding: 10px 10px;
-  border: 1px solid rgba(0, 0, 0, 0.3);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
   border-radius: 7px;
   margin: 10px 0;
 }
@@ -60,6 +94,17 @@ body {
   padding: 10px 0;
 }
 
+.post_header img {
+  border-radius: 50%;
+  margin-right: 7px;
+}
+
+.post_header_img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .content {
   width: 90%;
   padding: 10px 10px;
@@ -68,7 +113,7 @@ body {
 .btns {
   width: 90%;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
   padding: 5px;
 }
@@ -76,18 +121,31 @@ body {
 .btns button {
   font-size: 14px;
   padding: 5px 0;
-  width: 80px;
+  width: 120px;
+  border-radius: 7px;
+  background: rgba(140, 132, 235, 0.7);
+  outline: none;
+  border: none;
+}
+
+.btns button:active {
+  outline: none;
+  background: rgba(054, 057, 175, 0.5);
 }
 
 .comment {
   width: 90%;
   padding: 20px 0;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 6px;
 }
 .comments {
   width: 100%;
   display: flex;
   justify-content: flex-start;
-  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 20px 5px;
 }
 
 .user_comment {
@@ -107,6 +165,19 @@ body {
 
 .add_comment textarea {
   width: 100%;
+}
+
+.comment_img {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 7px;
+}
+
+.comment_img img {
+  border-radius: 50%;
+  margin-right: 7px;
 }
 
 .show_element {

@@ -2,17 +2,21 @@ const newsFeed = document.querySelector("#news_feed");
 const post_btn = document.querySelector("#post_btn");
 const post_content = document.querySelector("#post_content");
 const logout_btn = document.querySelector("#user_logout");
-const feed_Url = "http://localhost:3000/newsfeed";
-const post_Url = "http://localhost:3000/newpost";
-const comment_Url = "http://localhost:3000/addcomment";
+const feed_Url = "http://localhost:3000/api/newsfeed";
+const post_Url = "http://localhost:3000/api/newpost";
+const comment_Url = "http://localhost:3000/api/addcomment";
 
 function isLoggedin() {
   const isUserLoggedIn = localStorage.getItem("current_user");
-
   if (!isUserLoggedIn) {
     window.location.pathname = "/loginpage";
   } else {
+    const { first_name, last_name } = JSON.parse(isUserLoggedIn);
+
     getNewsFeed();
+    document.querySelector(
+      "#welcome_user"
+    ).textContent = `${first_name} ${last_name}`;
   }
 }
 
@@ -88,7 +92,11 @@ function updateDom(feed_array) {
       div.type = post.post_id;
       div.innerHTML = `
           <div class="post_header">
-            <span>${post.username}</span><span>${post.post_date}</span>
+           <div class="post_header_img"><img src='https://i.pravatar.cc/35?u${
+             post.username
+           }' alt='imgs'/><span>${post.username}</span></div><span>${
+        post.post_date
+      }</span>
           </div>
           <div class="content">
             <p>
@@ -96,11 +104,11 @@ function updateDom(feed_array) {
             </p>
           </div>
           <div class="btns">
-            <button>Like</button>
+            <button>Like <i class="fas fa-thumbs-up"></i></button>
             <button class="comments_btns" id="comment_btn-${
               post.post_id
-            }">Comment</button>
-            <button>Share</button>
+            }">Comment <i class="fas fa-comment"></i></button>
+            <button>Share <i class="fas fa-share"></i></button>
           </div>
           <div class="comment">
             <div class="all_comments-${post.post_id}">
@@ -128,10 +136,11 @@ function generateComments(arr) {
   return arr
     .map((comment) => {
       let content = `<div class="comments">
-        <span class="user_comment">${comment.comment_owner}</span
-        ><span
+      <div class="comment_img"><img src='https://i.pravatar.cc/20?u${comment.comment_owner}' alt='imgs'/> <span class="user_comment">${comment.comment_owner}</span
+        ></div><div><span
           >${comment.comment_content}</span
         >
+        </div>
       </div>`;
       if (comment.comment_owner !== null && comment.comment_content !== null) {
         return content;
@@ -151,8 +160,8 @@ function injectComment(comment) {
   const div = document.createElement("div");
   div.classList.add("comments");
   let content = `
-        <span class="user_comment">${comment_owner}</span
-        ><span
+       <div class="comment_img"><img src='https://i.pravatar.cc/35?u${comment_owner}' alt='imgs'/> <span class="user_comment">${comment_owner}</span
+        ></div><span
           >${comment_content}</span
         >`;
   div.innerHTML = content;

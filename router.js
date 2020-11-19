@@ -15,19 +15,19 @@ function router(request, response) {
     home(request, response);
   } else if (url.includes("/public")) {
     resources(request, response);
-  } else if (url === "/login" && request.method === "POST") {
+  } else if (url === "/api/login" && request.method === "POST") {
     login(request, response);
   } else if (url === "/loginpage") {
     loginPage(request, response);
   } else if (url === "/registerpage") {
     registerPage(request, response);
-  } else if (url === "/register") {
+  } else if (url === "/api/register") {
     register(request, response);
-  } else if (url === "/newpost") {
+  } else if (url === "/api/newpost") {
     newPost(request, response);
-  } else if (url === "/addcomment") {
+  } else if (url === "/api/addcomment") {
     addComment(request, response);
-  } else if (url === "/newsfeed") {
+  } else if (url === "/api/newsfeed") {
     newsFeed(request, response);
   } else {
     missing(request, response);
