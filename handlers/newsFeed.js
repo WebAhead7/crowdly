@@ -27,18 +27,17 @@ function filterData(data) {
 }
 
 function groupPosts(arr) {
-  let { username, text_content, post_id, post_date } = arr[0];
+  const { username, text_content, post_id, post_date } = arr[0];
   const comments = arr.map((comment) => {
     const { comment_content, comment_owner } = comment;
     return { comment_content, comment_owner };
   });
-  post_date = moment(post_date).format("LLL");
 
   return {
     username,
     text_content,
     post_id,
-    newPostDate,
+    post_date,
     comments,
   };
 }

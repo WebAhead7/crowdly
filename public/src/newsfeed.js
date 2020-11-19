@@ -36,7 +36,7 @@ function getNewsFeed() {
 
 function addNewPost(id, content) {
   const data = { user_id: id, text_content: content };
-  console.log(data);
+
   const newPost = fetch(post_Url, {
     method: "POST",
     headers: {

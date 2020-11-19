@@ -17,7 +17,7 @@ CREATE TABLE blog_posts (
   id SERIAL PRIMARY KEY,
   user_id INTEGER REFERENCES users(id),
   text_content TEXT,
-  post_date TEXT
+  post_date TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
 
 CREATE TABLE comments (

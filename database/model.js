@@ -13,10 +13,10 @@ left join comments on comments.post_id = blog_posts.id;
     .then((result) => result.rows);
 }
 
-function postPost(user_id, postContent, date) {
-  const values = [parseInt(user_id), postContent, date];
+function postPost(user_id, postContent) {
+  const values = [parseInt(user_id), postContent];
   return db.query(
-    "INSERT INTO blog_posts(user_id,text_content,post_date) VALUES($1, $2, $3)",
+    "INSERT INTO blog_posts(user_id,text_content) VALUES($1, $2)",
     values
   );
 }
