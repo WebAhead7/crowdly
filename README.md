@@ -23,5 +23,5 @@ HTML, CSS, JS, NodeJS, Heroku, Postgres SQL Database.
 
 Alaa: [@GitHub](https://github.com/alaabashiyi) <br>
 shooq: [@GitHub](https://github.com/shoogkabiya) <br>
-MuhKham: [@GitHub](https://github.com/nuwrss) <br>
-Um-Kalthoum: [@GitHub](https://github.com/Lujain-AbdUllatif) <br>
+Nuwrss: [@GitHub](https://github.com/nuwrss) <br>
+Lujain: [@GitHub](https://github.com/Lujain-AbdUllatif) <br>
