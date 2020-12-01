@@ -3,6 +3,8 @@ const post_btn = document.querySelector("#post_btn");
 const post_content = document.querySelector("#post_content");
 const comment_btn = document.querySelector("#comment_btn");
 const add_comment_section = document.querySelector(".add_comment");
+const allCommentsButtons = document.querySelectorAll('.comments_buttons');
+const allCommentsInputs = document.querySelectorAll('.comments_posts')
 const feed_Url = "http://localhost:3000/newsfeed";
 const post_Url = "http://localhost:3000/newpost";
 
@@ -53,7 +55,7 @@ function updateDom(feed_array) {
           </div>
           <div class="btns">
             <button>Like</button>
-            <button>Comment</button>
+            <button class="comments_buttons" id ="comment-${post.post_id}">Comment</button>
             <button>Share</button>
           </div>
           <div class="comment">
@@ -61,8 +63,8 @@ function updateDom(feed_array) {
             ${generateComments(post.comments)}
             </div>
             <div class="add_comment">
-              <textarea rows="2" id="post_content"> </textarea>
-              <button id="add_comment_btn">Add comment</button>
+              <textarea class="comments_posts" rows="2" id="post-${post.post_id}"> </textarea>
+              <button id="add_comment_btn" >Add comment</button>
             </div>
           </div>
               `;
@@ -88,9 +90,20 @@ post_btn.addEventListener("click", (e) => {
   addNewPost("1", post_content.value);
 });
 
+allCommentsButtons.forEach(btn=>{
+  btn.addEventListener('click',(e)=>{
+    const id = e.target.id.split('-')[1];
+    console.log(id);
+    const textArea = document.querySelector(`.post-${id}`);
+    textArea.classList.toggle("show_element");
+  })
+})
+
 
 comment_btn.addEventListener("click", (e) => {
   add_comment_section.classList.toggle("show_element");
 });
+
+
 
 getNewsFeed();

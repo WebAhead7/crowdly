@@ -25,13 +25,13 @@ function login() {
     .then((res) => res.json())
     .then((res) => {
       console.log(res);
-      if (res.statusCode !== 200) {
-        throw new Error("faild");
-      }
-      window.location.pathname = "/newsfeed.html";
+      // if (res.statusCode !== 200) {
+      //   throw new Error("faild");
+      // }
+      // window.location.pathname = "/newsfeed.html";
     })
     .catch((err) => {
-      alert("please try again");
+    
       console.log(err);
     });
 }

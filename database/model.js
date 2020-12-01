@@ -31,9 +31,8 @@ function getUser(username, password) {
     ])
     .then((results) => results.rows);
 }
-module.exports = { getAllPosts, postPost, getUser };
-function addNewComment(user_id, post_id, comment_content) {
-  const values = [parseInt(user_id), parseInt(post_id), comment_content];
+
+
 function addNewComment(comment_owner, post_id, comment_content) {
   const values = [comment_owner, parseInt(post_id), comment_content];
   return db.query(
