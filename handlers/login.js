@@ -5,17 +5,17 @@ function login(request, response) {
   request.on("data", (chunk) => (body += chunk));
   request.on("end", () => {
     const data = JSON.parse(body);
-    console.log(data);
+
     model
       .getUser(data.username, data.password)
       .then((result) => {
-        console.log(result);
         if (result.length === 0) {
           response.writeHead(500, { "content-type": "application/json" });
-          response.end(JSON.stringify("the user is not  found"));
+          response.end(JSON.stringify(false));
         } else {
           response.writeHead(200, { "content-type": "application/json" });
-          response.end(JSON.stringify("success"));
+          response.write(JSON.stringify(result));
+          response.end();
         }
       })
       .catch((error) => {

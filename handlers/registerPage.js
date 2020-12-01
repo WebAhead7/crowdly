@@ -1,10 +1,11 @@
+const model = require("../database/model");
 const fs = require("fs");
 const path = require("path");
 const missing = require("./missing");
 const db = require("../database/connection");
 
-function home(request, response) {
-  const filePath = path.join(__dirname, "..", "public", "newsfeed.html");
+function registerPage(request, response) {
+  const filePath = path.join(__dirname, "..", "public", "register.html");
   fs.readFile(filePath, (error, file) => {
     if (error) {
       missing(request, response);
@@ -14,5 +15,4 @@ function home(request, response) {
     }
   });
 }
-
-module.exports = home;
+module.exports = registerPage;

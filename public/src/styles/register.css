@@ -1,0 +1,27 @@
+* {
+    box-sizing: border-box;
+}
+
+div {
+    margin: auto;
+    border: 1px solid black;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 280px;
+    /* height: 330px; */
+    /* overflow: hidden; */
+}
+
+h1 {
+    margin: 0px;
+}
+
+form {
+    margin: 2px;
+}
+
+#redirDiv {
+    display: none;
+}
